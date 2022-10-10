@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre del perro</th>
+            <th scope="col">Fecha de nac. </th>
+            <th scope="col">Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let perro of buscar;let i= index">
+            <td>{{i+1}}</td>
+            <td>{{perro.PerroNombre}}</td>
+            <td>{{perro.PerroFecha}}</td>
+            <td>15 años</td>
+            <td>
+                <button class="btn btn-danger " (click)="eliminar(perro.Perroid)"> eliminar</button>
+                <button [routerLink]="['/editar',perro.Perroid]" class="btn btn-warning "> editar</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
